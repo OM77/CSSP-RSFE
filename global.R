@@ -7,5 +7,6 @@ g.ccy <- rbind(g.ccy, data.frame(base="EUR", quote="USD", bname="€", qname="$"
 g.ccy <- rbind(g.ccy, data.frame(base="EUR", quote="GBP", bname="€", qname="£", trade=TRUE, slip=0.0007, digits=5, s.digits=5, b.digits=4, low=0.60, high=1.60))
 g.ccy$name <- paste(g.ccy$base, g.ccy$quote, sep="/")
 g.ccy$sname <- paste(g.ccy$base, g.ccy$quote, sep="")
-               
-
+g.ccy$step <- 1/(10^g.ccy$digits)
+g.ccy$s.step <- 1/(10^g.ccy$s.digits)
+g.ccy$b.step <- 1/(10^g.ccy$b.digits)
